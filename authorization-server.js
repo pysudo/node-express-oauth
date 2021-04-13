@@ -113,8 +113,8 @@ app.post('/approve', (req, res) => {
 	return res.status(302).redirect(redirectURI);
 });
 
+// Back-channel request from client to the auth server using auth token/grant
 app.post('/token', (req, res) => {
-	// Back-channel request to the auth server using auth token/grant
 	if (!req.headers.authorization) {
 		return res.status(401).end();
 	}
